@@ -16,3 +16,6 @@ headers = {'accept-encoding': 'gzip, deflate, br',
 r = requests.get(url, headers=headers)
 video_url = r.json()['data']['stream'][0]['m3u8_url']
 print(video_url)
+
+
+#失效了 又是客户端201
