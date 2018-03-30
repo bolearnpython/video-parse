@@ -9,3 +9,4 @@ vid = m.group(1)
 r = requests.get('http://gslb.miaopai.com/stream/%s.json?token=' % vid)
 data = json.loads(r.text)
 urls = [r['scheme'] + r['host'] + r['path'] for r in data['result']]
+print(urls)

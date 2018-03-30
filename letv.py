@@ -2,7 +2,6 @@ import time
 
 import requests
 
-
 def calcTimeKey(t):
     ror = lambda val, r_bits, : (
         (val & (2**32 - 1)) >> r_bits % 32) | (val << (32 - (r_bits % 32)) & (2**32 - 1))

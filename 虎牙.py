@@ -13,10 +13,8 @@ import re
 import requests
 from scrapy import Selector
 
-vid = re.search(r'/play/(.*).html',
-                'http://ahuya.duowan.com/play/14743000.html').group(1)
-play_api = 'http://v-api-play.huya.com/index.php?partner=vhuya&r=vhuyaplay%2Fvideo&vid={vid}'.format(
-    vid=vid)
+vid = re.search(r'/play/(.*).html', 'http://ahuya.duowan.com/play/14743000.html').group(1)
+play_api = 'http://v-api-play.huya.com/index.php?partner=vhuya&r=vhuyaplay%2Fvideo&vid={vid}'.format(vid=vid)
 r = requests.get(play_api)
 data = json.loads(r.text)
 for item in data['result']['items']:

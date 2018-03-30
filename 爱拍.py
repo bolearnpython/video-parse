@@ -11,3 +11,4 @@ from scrapy import Selector
 r = requests.get('http://www.aipai.com/c31/OT02JSAqJCRpJGsu.html')
 sel = Selector(text=r.text, type='html')
 url = sel.css('meta[property="og:videosrc"]::attr(content)').extract_first()
+print(url)

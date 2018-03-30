@@ -10,7 +10,6 @@ def right_shift(val, n):
     return val >> n if val >= 0 else (val + 0x100000000) >> n
 r = requests.get('http://www.toutiao.com/a6296462662335201793/')
 vid = re.findall(r"videoid\s*:\s*'([^']+)',\n", r.text)[0]
-
 r = str(random.random())[2:]
 n = '/video/urls/v/1/toutiao/mp4/%s' % vid + '?r=' + r
 c = binascii.crc32(n.encode())
